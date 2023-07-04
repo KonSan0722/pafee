@@ -10,10 +10,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class TimerButton extends HookConsumerWidget {
   TimerButton({super.key});
-  // var stopTimer = true;
-  // var elapsedTime = 0;
-  // var newValue = 0;
-  // Timer? calculateTimer;
   var stopTimer = useState(false);
   var elapsedTime = useState(0);
   var newValue = useState(0);
@@ -56,12 +52,3 @@ class TimerButton extends HookConsumerWidget {
             changeContainerNotifier ? const Text('計算開始') : const Text("計算終了"));
   }
 }
-
-// var stopTimer = true;
-// var elapsedTime = 0;
-// var newValue = 0;
-// Timer? calculateTimer;
-// var stopTimer = useState(false);
-// var elapsedTime = useState(0);
-// var newValue = useState(0);
-// Timer? calculateTimer;
