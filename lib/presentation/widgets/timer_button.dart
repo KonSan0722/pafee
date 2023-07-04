@@ -5,7 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pafee_app/Application/provider/pafee_provider.dart';
+import 'package:pafee_app/Application/state/pafee_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class TimerButton extends HookConsumerWidget {
@@ -46,6 +46,8 @@ class TimerButton extends HookConsumerWidget {
     return ElevatedButton(
         onPressed: () {
           stopTimer.value = !stopTimer.value;
+          final notifier = ref.read(changeContainerNotifierProvider.notifier);
+          notifier.change();
           startTimer();
         },
         child:
