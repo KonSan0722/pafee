@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pafee_app/Application/provider/pafee_provider.dart';
+import 'package:pafee_app/Application/state/pafee_provider.dart';
 import 'package:pafee_app/presentation/widgets/next_button.dart';
 
 import '../widgets/pafee_container.dart';

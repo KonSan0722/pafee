@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pafee_app/Application/provider/pafee_provider.dart';
+import 'package:pafee_app/Application/state/pafee_provider.dart';
 
 class LoginContainer extends ConsumerWidget {
   const LoginContainer({super.key});

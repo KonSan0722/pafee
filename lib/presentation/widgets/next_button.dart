@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pafee_app/Application/provider/pafee_provider.dart';
+import 'package:pafee_app/Application/state/pafee_provider.dart';
 
 import 'alert.dart';
 

@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pafee_app/presentation/widgets/timer_button.dart';
-import '../../Application/provider/pafee_provider.dart';
+import '../../Application/state/pafee_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../widgets/fee_page_container.dart';
