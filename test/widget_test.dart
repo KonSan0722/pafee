@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:pafee_app/main.dart';
-import 'package:pafee_app/router/router.dart';
+import 'package:pafee_app/presentation/router/router.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {

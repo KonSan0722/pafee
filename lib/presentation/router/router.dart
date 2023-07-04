@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../presentation/fee_page.dart';
-import '../presentation/pafee_page.dart';
+import '../pages/fee_page.dart';
+import '../pages/pafee_page.dart';
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});

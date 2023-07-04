@@ -44,7 +44,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  
+  hooks_riverpod:
   flutter_lints:
   riverpod_generator:
   build_runner:

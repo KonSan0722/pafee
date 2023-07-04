@@ -3,7 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pafee_app/Application/provider/pafee_provider.dart';
-import 'package:pafee_app/Application/widget/alert_massage.dart';
+
+import 'alert.dart';
 
 class NextButton extends ConsumerWidget {
   const NextButton({super.key});
@@ -22,7 +23,7 @@ class NextButton extends ConsumerWidget {
             showDialog(
                 context: context,
                 builder: (context) {
-                  return const AlertMessage(
+                  return const Alert(
                     textMessage: "料金、加算される時間が入力されていないか、無効な値か文字が入力されています。",
                   );
                 });
@@ -30,7 +31,7 @@ class NextButton extends ConsumerWidget {
             showDialog(
                 context: context,
                 builder: (context) {
-                  return const AlertMessage(
+                  return const Alert(
                     textMessage: "'料金が入力されていないか、無効な値が入力されています'",
                   );
                 });
@@ -38,7 +39,7 @@ class NextButton extends ConsumerWidget {
             showDialog(
                 context: context,
                 builder: (context) {
-                  return const AlertMessage(
+                  return const Alert(
                     textMessage: '加算される時間が入力されていないか、無効な値が入力されています',
                   );
                 });

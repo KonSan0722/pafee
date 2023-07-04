@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../provider/pafee_provider.dart';
+import '../../Application/provider/pafee_provider.dart';
 
 class PafeeTextFormField extends ConsumerWidget {
   final String hint;

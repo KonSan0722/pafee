@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pafee_app/Application/widget/pafee_textformfield.dart';
-import 'package:pafee_app/Application/widget/tab_item.dart';
+import 'package:pafee_app/presentation/widgets/pafee_textformfield.dart';
 
 class PafeeContainer extends StatelessWidget {
   final feeHintText;

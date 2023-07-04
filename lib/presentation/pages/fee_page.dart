@@ -3,13 +3,13 @@ import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pafee_app/Application/widget/fee_page_container.dart';
-import 'package:pafee_app/Application/widget/start_button.dart';
-import 'package:pafee_app/Application/widget/stop_button.dart';
-import 'package:pafee_app/Application/widget/timer_button.dart';
-import '../Application/provider/pafee_provider.dart';
+import 'package:pafee_app/presentation/widgets/timer_button.dart';
+import '../../Application/provider/pafee_provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class FeePage extends ConsumerWidget {
+import '../widgets/fee_page_container.dart';
+
+class FeePage extends HookConsumerWidget {
   FeePage({super.key});
 
   @override

@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pafee_app/Application/provider/pafee_provider.dart';
-import 'package:pafee_app/Application/widget/pafee_container.dart';
-import 'package:pafee_app/Application/widget/next_button.dart';
-import 'package:pafee_app/Application/widget/tab_item.dart';
+import 'package:pafee_app/presentation/widgets/next_button.dart';
+
+import '../widgets/pafee_container.dart';
+import '../widgets/tab_item.dart';
 
 class PafeePage extends ConsumerWidget {
   const PafeePage({super.key});
