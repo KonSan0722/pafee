@@ -1,21 +1,18 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pafee_app/Application/state/pafee_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class TimerButton extends HookConsumerWidget {
-  TimerButton({super.key});
-  var stopTimer = useState(false);
-  var elapsedTime = useState(0);
-  var newValue = useState(0);
-  Timer? calculateTimer;
+  const TimerButton({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    var stopTimer = useState(false);
+    var elapsedTime = useState(0);
+    var newValue = useState(0);
+    Timer calculateTimer;
     final timeNotifier = ref.watch(timeNotifierProvider);
     final feeNotifier = ref.watch(feeNotifierProvider);
     final maximumFeeNotifier = ref.watch(maximumFeeNotifierProvider);
