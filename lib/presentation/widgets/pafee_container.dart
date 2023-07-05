@@ -17,18 +17,19 @@ class PafeeContainer extends StatelessWidget {
       required this.timeImageIcon});
   @override
   Widget build(BuildContext context) {
-    final textColor = Color.fromARGB(255, 123, 123, 123);
+    Color textColor = const Color.fromARGB(255, 123, 123, 123);
     final size = MediaQuery.of(context).size;
     final height = size.height;
     return Padding(
-        padding: EdgeInsets.only(left: 30, right: 30),
+        padding: const EdgeInsets.only(left: 30, right: 30),
         child: Container(
           alignment: Alignment.center,
           height: height / 3,
           decoration: BoxDecoration(
-              border: Border.all(color: Color.fromARGB(255, 232, 232, 232)),
+              border:
+                  Border.all(color: const Color.fromARGB(255, 232, 232, 232)),
               borderRadius: BorderRadius.circular(20),
-              color: Color.fromRGBO(254, 254, 254, 1),
+              color: const Color.fromRGBO(254, 254, 254, 1),
               boxShadow: const [
                 BoxShadow(
                     color: Color.fromARGB(255, 57, 57, 55),
