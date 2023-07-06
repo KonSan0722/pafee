@@ -12,7 +12,6 @@ class TimerButton extends HookConsumerWidget {
     var stopTimer = useState(false);
     var elapsedTime = useState(0);
     var newValue = useState(0);
-    Timer calculateTimer;
     final timeNotifier = ref.watch(timeNotifierProvider);
     final feeNotifier = ref.watch(feeNotifierProvider);
     final maximumFeeNotifier = ref.watch(maximumFeeNotifierProvider);
@@ -20,11 +19,23 @@ class TimerButton extends HookConsumerWidget {
     final updateFeeNotifier = ref.watch(updateFeeNotifierProvider);
     final changeContainerNotifier = ref.watch(changeContainerNotifierProvider);
 
-    void startTimer() {
-      calculateTimer =
-          Timer.periodic(Duration(seconds: int.parse(timeNotifier)), (timer) {
+    void startElapsedTimer() {
+      Timer.periodic(const Duration(seconds: 1), (timer) {
         if (stopTimer.value == true) {
-          elapsedTime.value = elapsedTime.value + 1;
+          if (elapsedTime.value == int.parse(maximumTimeNotifier)) {
+            timer.cancel();
+          } else {
+            elapsedTime.value = elapsedTime.value + 1;
+          }
+        } else {
+          timer.cancel();
+        }
+      });
+    }
+
+    void startCalculateTimer() {
+      Timer.periodic(Duration(seconds: int.parse(timeNotifier)), (timer) {
+        if (stopTimer.value == true) {
           if (elapsedTime.value == int.parse(maximumTimeNotifier)) {
             final notifier = ref.read(updateFeeNotifierProvider.notifier);
             notifier.save(int.parse(maximumFeeNotifier));
@@ -45,7 +56,8 @@ class TimerButton extends HookConsumerWidget {
           stopTimer.value = !stopTimer.value;
           final notifier = ref.read(changeContainerNotifierProvider.notifier);
           notifier.change();
-          startTimer();
+          startElapsedTimer();
+          startCalculateTimer();
         },
         child:
             changeContainerNotifier ? const Text('計算開始') : const Text("計算終了"));
