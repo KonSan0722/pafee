@@ -34,11 +34,9 @@ class FeePage extends HookConsumerWidget {
       ),
       body: Center(
         child: Column(
-          children: [
-            const LoginContainer(),
+          children: const [
+            LoginContainer(),
             TimerButton(),
-            Text("$updateFeeNotifier"),
-            Text("$changeContainerNotifier")
           ],
         ),
       ),
