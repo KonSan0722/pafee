@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pafee_app/presentation/widgets/back_home_Button.dart';
 import 'package:pafee_app/presentation/widgets/timer_button.dart';
 import '../../Application/state/pafee_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -26,17 +27,13 @@ class FeePage extends HookConsumerWidget {
           .showSnackBar(SnackBar(content: Text("駐車料金が$newState円になりました")));
     });
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.home),
-          onPressed: () => context.pop(),
-        ),
-      ),
       body: Center(
         child: Column(
-          children: const [
-            LoginContainer(),
-            TimerButton(),
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            const LoginContainer(),
+            const TimerButton(),
+            changeContainerNotifier ? const BackHomeButton() : Container()
           ],
         ),
       ),
