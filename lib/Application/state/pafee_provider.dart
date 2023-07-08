@@ -78,3 +78,19 @@ class ChangeContainerNotifier extends _$ChangeContainerNotifier {
     state = !state;
   }
 }
+
+@riverpod
+class ChangeTextContainerNotifier extends _$ChangeTextContainerNotifier {
+  @override
+  bool build() {
+    return true;
+  }
+
+  void changeText(value) {
+    if (int.parse(value) == 0 || value == "") {
+      state = true;
+    } else {
+      state = false;
+    }
+  }
+}
