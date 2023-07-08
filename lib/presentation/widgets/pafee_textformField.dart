@@ -20,44 +20,44 @@ class PafeeTextFormField extends ConsumerWidget {
         child: TextFormField(
           keyboardType: TextInputType.number,
           inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-          onChanged: (String? value) {
+          onChanged: (String value) {
             switch (hint) {
               case "料金":
-                if (value?.isEmpty == true) {
+                if (value.isEmpty == true) {
                   final notifier = ref.read(feeNotifierProvider.notifier);
                   notifier.save('0');
                 } else {
                   final notifier = ref.read(feeNotifierProvider.notifier);
-                  notifier.save(value!);
+                  notifier.save(value);
                 }
                 break;
               case "加算される時間":
-                if (value?.isEmpty == true) {
+                if (value.isEmpty == true) {
                   final notifier = ref.read(timeNotifierProvider.notifier);
                   notifier.save('0');
                 } else {
                   final notifier = ref.read(timeNotifierProvider.notifier);
-                  notifier.save(value!);
+                  notifier.save(value);
                 }
                 break;
               case "最大料金":
-                if (value?.isEmpty == true) {
+                if (value.isEmpty == true) {
                   final notifier =
                       ref.read(maximumFeeNotifierProvider.notifier);
                   notifier.save('0');
                 }
                 final notifier = ref.read(maximumFeeNotifierProvider.notifier);
-                notifier.save(value!);
+                notifier.save(value);
                 break;
               case "最大時間":
-                if (value?.isEmpty == true) {
+                if (value.isEmpty == true) {
                   final notifier =
                       ref.read(maximumTimeNotifierProvider.notifier);
                   notifier.save('0');
                 } else {
                   final notifier =
                       ref.read(maximumTimeNotifierProvider.notifier);
-                  notifier.save(value!);
+                  notifier.save(value);
                 }
                 break;
             }
