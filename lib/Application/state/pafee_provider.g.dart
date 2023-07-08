@@ -103,4 +103,21 @@ final changeContainerNotifierProvider =
 );
 
 typedef _$ChangeContainerNotifier = AutoDisposeNotifier<bool>;
+String _$changeTextContainerNotifierHash() =>
+    r'1ddc1b336961481be233c523eb4ef8a4600f3e9d';
+
+/// See also [ChangeTextContainerNotifier].
+@ProviderFor(ChangeTextContainerNotifier)
+final changeTextContainerNotifierProvider =
+    AutoDisposeNotifierProvider<ChangeTextContainerNotifier, bool>.internal(
+  ChangeTextContainerNotifier.new,
+  name: r'changeTextContainerNotifierProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$changeTextContainerNotifierHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$ChangeTextContainerNotifier = AutoDisposeNotifier<bool>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions
