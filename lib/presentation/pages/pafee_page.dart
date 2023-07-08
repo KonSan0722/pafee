@@ -19,47 +19,42 @@ class PafeePage extends ConsumerWidget {
     final __ = ref.watch(timeNotifierProvider);
     final ___ = ref.watch(maximumFeeNotifierProvider);
     final ____ = ref.watch(maximumTimeNotifierProvider);
-
+    final _____ = ref.watch(changeTextContainerNotifierProvider);
     return MaterialApp(
-      theme: ThemeData(
-          textTheme:
-              GoogleFonts.kosugiMaruTextTheme(Theme.of(context).textTheme)),
-      home: Scaffold(
-          backgroundColor: const Color.fromARGB(255, 24, 135, 132),
-          body: Stack(children: [
-            Container(
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('lib/images/駐車場.jpeg'),
-                      fit: BoxFit.fill)),
+        theme: ThemeData(
+            textTheme:
+                GoogleFonts.kosugiMaruTextTheme(Theme.of(context).textTheme)),
+        home: Scaffold(
+          backgroundColor: Color.fromARGB(255, 255, 208, 52),
+          body: Center(
+              child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                    width: 150,
+                    height: 150,
+                    child: Image.asset('lib/images/pafee.png')),
+                PafeeContainer(
+                    comment: timeFee.title,
+                    feeHintText: timeFee.feeComment,
+                    feeImageIcon: timeFee.feeIcon,
+                    timeHintText: timeFee.timeComment,
+                    timeImageIcon: timeFee.timeIcon),
+                const SizedBox(height: 50),
+                PafeeContainer(
+                    comment: maximumFee.title,
+                    feeHintText: maximumFee.feeComment,
+                    feeImageIcon: maximumFee.feeIcon,
+                    timeHintText: maximumFee.timeComment,
+                    timeImageIcon: maximumFee.timeIcon),
+                SizedBox(height: height / 50),
+                const NextButton(),
+                SizedBox(
+                  height: height / 50,
+                )
+              ],
             ),
-            Center(
-                child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  SizedBox(height: height / 15),
-                  PafeeContainer(
-                      comment: timeFee.title,
-                      feeHintText: timeFee.feeComment,
-                      feeImageIcon: timeFee.feeIcon,
-                      timeHintText: timeFee.timeComment,
-                      timeImageIcon: timeFee.timeIcon),
-                  const SizedBox(height: 50),
-                  PafeeContainer(
-                      comment: maximumFee.title,
-                      feeHintText: maximumFee.feeComment,
-                      feeImageIcon: maximumFee.feeIcon,
-                      timeHintText: maximumFee.timeComment,
-                      timeImageIcon: maximumFee.timeIcon),
-                  SizedBox(height: height / 50),
-                  const NextButton(),
-                  SizedBox(
-                    height: height / 50,
-                  )
-                ],
-              ),
-            )),
-          ])),
-    );
+          )),
+        ));
   }
 }

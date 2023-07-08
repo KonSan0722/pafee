@@ -23,6 +23,8 @@ class TimerButton extends HookConsumerWidget {
       Timer.periodic(const Duration(seconds: 1), (timer) {
         if (stopTimer.value == true) {
           if (elapsedTime.value == int.parse(maximumTimeNotifier)) {
+            final notifier = ref.read(updateFeeNotifierProvider.notifier);
+            notifier.save(int.parse(maximumFeeNotifier));
             timer.cancel();
           } else {
             elapsedTime.value = elapsedTime.value + 1;
@@ -36,9 +38,8 @@ class TimerButton extends HookConsumerWidget {
     void startCalculateTimer() {
       Timer.periodic(Duration(seconds: int.parse(timeNotifier)), (timer) {
         if (stopTimer.value == true) {
-          if (elapsedTime.value == int.parse(maximumTimeNotifier)) {
-            final notifier = ref.read(updateFeeNotifierProvider.notifier);
-            notifier.save(int.parse(maximumFeeNotifier));
+          if (elapsedTime.value == int.parse(maximumTimeNotifier) &&
+              int.parse(maximumTimeNotifier) != 0) {
             timer.cancel();
           } else {
             final notifier = ref.read(updateFeeNotifierProvider.notifier);

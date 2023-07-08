@@ -13,11 +13,15 @@ class NextButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final fee = ref.watch(feeNotifierProvider);
     final time = ref.watch(timeNotifierProvider);
+    final maximumTime = ref.watch(maximumTimeNotifierProvider);
     return IconButton(
         icon: const Icon(Icons.navigate_next),
         iconSize: 60,
-        color: Colors.white,
+        color: Colors.black,
         onPressed: () {
+          final notiier =
+              ref.read(changeTextContainerNotifierProvider.notifier);
+          notiier.changeText(maximumTime);
           HapticFeedback.vibrate();
           if (fee == "0" && time == "0") {
             showDialog(

@@ -9,6 +9,9 @@ class BackHomeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-        onPressed: () => context.pop(), icon: const Icon(Icons.home));
+      onPressed: () => context.pop(),
+      icon: const Icon(Icons.home),
+      iconSize: 50,
+    );
   }
 }

@@ -24,7 +24,7 @@ class PafeeContainer extends StatelessWidget {
         padding: const EdgeInsets.only(left: 30, right: 30),
         child: Container(
           alignment: Alignment.center,
-          height: height / 3,
+          height: height / 10 * 3,
           decoration: BoxDecoration(
               border:
                   Border.all(color: const Color.fromARGB(255, 232, 232, 232)),

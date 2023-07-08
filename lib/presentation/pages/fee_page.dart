@@ -22,18 +22,21 @@ class FeePage extends HookConsumerWidget {
     // int isTime = int.parse(timeNotifier) * 60;
     final changeContainerNotifier = ref.watch(changeContainerNotifierProvider);
     final updateFeeNotifier = ref.watch(updateFeeNotifierProvider);
+    final changeTextContainerNotifer =
+        ref.watch(changeTextContainerNotifierProvider);
     ref.listen(updateFeeNotifierProvider, (oldState, newState) {
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text("駐車料金が$newState円になりました")));
     });
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 255, 208, 52),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             const LoginContainer(),
             const TimerButton(),
-            changeContainerNotifier ? const BackHomeButton() : Container()
+            changeContainerNotifier ? const BackHomeButton() : Container(),
           ],
         ),
       ),

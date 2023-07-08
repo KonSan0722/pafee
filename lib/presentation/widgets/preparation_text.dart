@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../Application/state/pafee_provider.dart';
+import 'kosugimaru_text.dart';
 
 class PreparationText extends ConsumerWidget {
   const PreparationText({super.key});
@@ -14,13 +15,22 @@ class PreparationText extends ConsumerWidget {
     final feeNotifier = ref.watch(feeNotifierProvider);
     final maximumFeeNotifier = ref.watch(maximumFeeNotifierProvider);
     final maximumTimeNotifier = ref.watch(maximumTimeNotifierProvider);
-    return Container(
-        child: Column(
+    final changeTextNotifier = ref.watch(changeTextContainerNotifierProvider);
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Text("$timeNotifier分で$feeNotifier円加算され、"),
-        Text("$maximumTimeNotifier分で最大料金$maximumFeeNotifier円となります。"),
-        const Text("お間違い無かったでしょうか？")
+        changeTextNotifier
+            ? KosugimaruText(
+                comment: "$timeNotifier分で$feeNotifier円加算されます。", size: 15)
+            : KosugimaruText(
+                comment: "$timeNotifier分で$feeNotifier円加算され、", size: 15),
+        changeTextNotifier
+            ? Container()
+            : KosugimaruText(
+                comment: "$maximumTimeNotifier分で最大料金$maximumFeeNotifier円となります。",
+                size: 15),
+        const KosugimaruText(comment: "お間違い無かったでしょうか？", size: 20)
       ],
-    ));
+    );
   }
 }
