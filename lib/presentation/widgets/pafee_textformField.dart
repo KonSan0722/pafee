@@ -63,14 +63,12 @@ class PafeeTextFormField extends ConsumerWidget {
             }
           },
           decoration: InputDecoration(
-            //TextFormFieldの形を変える
-            contentPadding:
-                const EdgeInsets.symmetric(vertical: 10), //TextFormFieldの高さを設定
-            hintText: hint, //TextFormFieldのアシストテキストの設定
+            contentPadding: const EdgeInsets.symmetric(vertical: 10),
+            hintText: hint,
             prefixIcon: Icon(
-              icon, //アイコンの指定
+              icon,
             ),
-            border: const OutlineInputBorder(), //TextFormFieldの外枠を作る
+            border: const OutlineInputBorder(),
           ),
         ),
       ),
