@@ -120,4 +120,20 @@ final changeTextContainerNotifierProvider =
 );
 
 typedef _$ChangeTextContainerNotifier = AutoDisposeNotifier<bool>;
+String _$stopTimerNotifierHash() => r'f6e40031677765a115250d00789a86772dad4209';
+
+/// See also [StopTimerNotifier].
+@ProviderFor(StopTimerNotifier)
+final stopTimerNotifierProvider =
+    AutoDisposeNotifierProvider<StopTimerNotifier, bool>.internal(
+  StopTimerNotifier.new,
+  name: r'stopTimerNotifierProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$stopTimerNotifierHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$StopTimerNotifier = AutoDisposeNotifier<bool>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

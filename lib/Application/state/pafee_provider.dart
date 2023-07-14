@@ -94,3 +94,15 @@ class ChangeTextContainerNotifier extends _$ChangeTextContainerNotifier {
     }
   }
 }
+
+@riverpod
+class StopTimerNotifier extends _$StopTimerNotifier {
+  @override
+  bool build() {
+    return false;
+  }
+
+  void change() {
+    state = !state;
+  }
+}
